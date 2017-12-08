@@ -1,0 +1,452 @@
+<html>
+			<head>
+				<title>
+					Sign In
+				</title>
+
+				<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<style>
+	
+		h1
+		{
+		
+		text-align:center;
+		color:black;
+		font-family:Arial, Helvetica;
+		}
+
+	fieldset
+		{
+		border-radius:10px;
+		margin-left:30%;
+		margin-right:30%;
+		}
+
+	.inputboxes
+		{
+		width:80%;
+		height:5%;
+		padding-left:5px;
+		border:0.2px solid black;
+		border-radius:5px;
+		}
+		
+		
+		
+	.inputboxes:focus:required
+		{
+		border:1px solid green;
+		
+		}	
+
+	.inputboxes:focus:valid
+		{
+		border:1px solid green;
+		}
+
+	.inputboxes:focus:invalid
+		{
+		border:1px solid red;
+		}
+
+	.inputbuttons
+		{
+		display:inline-block;
+		width:40%;
+		height:8%;
+		color:black;
+		border:2px solid green;
+		border-radius: 12px;
+		background-color: #4CAF50;
+		padding: 14px 15px;
+		margin: 8px 0;
+		cursor: pointer;
+		width: 25px%;
+		font-family: Arial, Helvetica;
+		font-weight:bold;
+		font-size: 20px;
+		}
+
+	.inputboxes_block
+	{
+	width:50%;
+	height:5%;
+	padding-left:5px;
+	border:0.2px solid black;
+	border-radius:5px;
+	}	
+		
+	form
+	{
+	text-align:center;
+	}
+	
+	.label_elements
+	{
+	float:left;
+	margin-left:57px;
+	font-weight:bold;
+	font-family:Arial, Helvetica;
+	text-align:left;
+	
+	}
+	
+	.heading
+	{
+	text-align:center;
+	font-family:Arial, Helvetica;
+	
+	}
+	
+	.addresselements
+	{
+	display:inline-block;
+	width:40%;
+	float:left;
+	margin-left:57px;
+	font-family:Arial, Helvetica;
+	}
+	
+	.inputaddress
+	{
+	display:inline-block;
+	width:40%;
+	
+	}
+	
+	.inputmargin
+	{
+	margin-right:230px;
+	}
+	
+	.Address_block
+	{
+	float:left;
+	}
+	
+	.label_elements_right
+	{
+	float:right;
+	font-family:Arial, Helvetica;
+	font-weight:bold;
+	}
+	
+	.label_elements_set_left
+	{
+	margin-left:0px;
+	font-family:Arial, Helvetica;
+	font-weight:bold;
+	
+	}
+	
+	.label_elements_set_right
+	{
+	margin-left:370px;
+	font-family:Arial, Helvetica;
+	font-weight:bold;
+	}
+
+	.label_gender_elements
+	{
+		float:left;
+		margin-left: 60px;
+		font-family:Arial, Helvetica;
+		font-weight:bold;
+
+	}
+
+	.label_placeholders
+	{
+		font-family: Arial, Helvetica;
+		font-weight: bold;
+	}
+
+	.label_element_prof_pic
+	{
+		padding-left:55px;
+
+	}
+
+	.link_class
+	{
+		text-decoration: none;
+		color:green;
+	}
+
+	.Address_css_elements
+	{
+		float:left;
+		margin-left:5px;
+		width:20%;
+		height:3%;
+		border-width:3px; 
+		width:50%
+		padding-left:5px;
+		border:0.2px solid black;
+		border-radius:4px;
+		font-family: Arial, Helvetica;
+		font-weight: bold;
+		padding-left: 5px;
+	}
+	*{
+       margin:0px;
+       padding:0px;
+     }
+     .top_bar{
+          width: 100%;
+          height:60px;
+          background-color:#8A0651; 
+     }
+     .top_side_left{
+         margin-left: 10%;
+         color:#FFFFFF;
+         padding-top: 18px;
+         float: left;
+     }
+      .top_mid_side_left{
+         margin-left: 10%;
+         color:#FFFFFF;
+         padding-top: 8px;
+         float: left;
+     }
+     .top_side_right{
+     	margin-right: 10%;
+     	color:#FFFFFF;
+     	padding-top: 18px;
+     	float: right;
+     }
+     .top_mid_side_right{
+         margin-right: 10%;
+         color:#FFFFFF;
+         padding-top: 8px;
+         float: right;
+     }
+     #offer{
+     	border: 1px solid #FFFFFF;
+     	width: 200px;
+     	text-align: center;
+     }
+     #a1{
+         color:#FFFFFF;
+         font-size: 16px;
+         transition: 1s;
+     }
+     #a1:hover{
+          background-color: #FFFFFF;
+          color: #8A0651;
+     }
+     .top_ul{
+     	    list-style-type: none;
+     }
+     .li_top{
+         display:inline-block;
+         color:#FFFFFF;
+     }
+     .a11{
+          text-decoration: none;
+     	  color: #ffffff;
+     }
+     .s_bar{
+     	  width: 100%;
+          height: 40px;
+          background-color:#424242; 
+     }
+     .top_ul_1{
+     	    list-style-type: none;
+     	    margin: 0px;
+     }
+     .main_bar{
+     	margin-left:10%;
+     	margin-right:10%;
+     }
+     .slide_bar{
+                 width:100%;
+                 padding-top:30px;
+     }
+     .content{
+     	margin-top:20px;
+     	margin-bottom: 5%;
+     	margin-left:10%;
+     	margin-right: 10%;
+     }
+      #img1{
+      	margin-left:9%
+      	margin-right:10%; 
+      	width:100%;
+      	height: 350px;
+      	position: relative;
+      	padding:10px;
+      	background:white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+      }
+
+      .description{
+      	margin-right: 10%;
+      	margin-left: 10%;
+      }
+      
+      .mid_page{
+      	 margin-top:30px; 
+         width: 100%;
+         background-color:#8A0651 ;
+         height: 75px;
+      } 
+
+      .mid_page_content{
+      	width:100%;
+      }
+      
+      #m_p_c{
+      	text-align: center;
+      	font-size: 44px;
+      	font-family: times;
+      	color:#FFFFFF;
+      	padding-top: 13px;
+      	width:100%;
+      }
+      div.description{
+      	  width: 250px;
+      	  height: 150px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          text-align: center;
+          padding-top: 15px;
+          margin-top:20px; 
+
+
+      }
+       .desc{
+       	margin-top: 40px;
+       	padding-left: 110px;
+       	width: 100%;
+       }
+       .footer{
+       	 margin-top:630px;
+       	 width:100%;
+       	 background-color:#434343;
+         height:200px;
+       }
+       .bottom{
+       	width:100%;
+       	background-color:#000000;
+       	height:50px;
+       }
+
+	.legend_elements
+	{
+		text-align: center;
+	}
+
+	input:required:valid
+	{
+		border:1px solid green;
+		background-image: url("C:/Users/arpan/Desktop/black_tick.png");
+		background-repeat: no-repeat;
+		background-position: 97%;
+		background-size: 20px;
+	}
+
+	input:required:invalid
+	{
+		border:1px solid black;
+		background-image: url("C:/Users/arpan/Desktop/required.png");
+		background-repeat: no-repeat;
+		background-position: 97%;
+		background-size: 20px;
+	}
+	.field{
+		margin-top:30px;
+	}
+	.footer{
+       	 margin-top:50px;
+       	 width:100%;
+       	 background-color:#434343;
+         height:200px;
+       }
+       .bottom{
+       	width:100%;
+       	background-color:#000000;
+       	height:50px;
+       }
+	</style>
+</head>
+<body>
+	
+        
+         <section class="top_bar">
+            <div class="top_side_left">
+            	<p id="offer"><a href="#" id="a1">Get flat 35% off on order 50$</a></p>
+            </div>
+            <div class="top_side_right">
+                 <ul class="top_ul">
+                    <li class="li_top"><a href="#" class='a11'>Login</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Register</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Contact</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>About Us!</a> </li>
+                 </ul>
+            </div>
+     </section>
+     <section class="s_bar">
+          <div class="top_mid_side_left">
+                 <ul class="top_ul_1">
+                    <li class="li_top"><a href="#" class='a11'><b>VIT-MART</b></a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Home</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Sign In</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Sign Up</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>About Us!</a> </li>
+                 </ul>
+            </div>
+            <div class="top_mid_side_right">
+                    <form>
+                    <table>
+                    <tr>
+                    <td><input type="text" placeholder="Search..."></input></td> 
+                    <td><input type="submit" value="OK!"></input></td> 
+                    </tr>
+                    </table>
+                    </form>
+                 </ul>
+            </div>
+     </section>
+		<div>
+			<fieldset class="field">
+				<legend class="legend_elements"><h1>Sign In</h1></legend>
+				<p class="heading">Welcome to VIT Mart, if you have not registered please click on <a class="link_class" href="#">Sign-Up!</a>
+				</p>
+				<hr></hr>
+				<br>
+				<br>	
+				<form action="login.php" method = "post">
+				<div>
+					<label class="label_elements">Email Id</label>
+					<br>
+					<br>
+					<input class="inputboxes label_placeholders" type="email" name="Email_Id" placeholder="Email_Id" required></input>
+					<br>
+					<br>
+				</div>
+				<div>
+					<label class="label_elements">Password </label>
+					<br>
+					<br>
+					<input class="inputboxes label_placeholders" type="password"  name="pwd1" required="" placeholder="Password">
+					<br>
+					<br>
+				</div>
+								
+				<hr></hr>
+					<input class="inputbuttons" type="submit" value="Login"> 
+				
+	</form>
+</fieldset>
+</div>
+ <section class="footer">
+          
+     </section>
+     <section class="bottom">
+     	
+     </section>
+
+</body>
+
+</html>

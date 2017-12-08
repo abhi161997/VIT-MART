@@ -129,7 +129,8 @@
           text-align: center;
           padding-top: 15px;
           margin-top:20px; 
-          border: 2px solid #434343 ;
+
+
       }
        .desc{
        	margin-top: 40px;
@@ -141,7 +142,6 @@
        	 width:100%;
        	 background-color:#434343;
          height:200px;
-
        }
        .bottom{
        	width:100%;
@@ -169,14 +169,6 @@
        	float:right;
         width:49%;
        }
-       .bottom{
-
-        color:white;
-        text-align:center;
-       }
-       .bot{
-        padding: auto;
-       }
      </style>
   </head>
   <body>
@@ -186,21 +178,21 @@
             </div>
             <div class="top_side_right">
                  <ul class="top_ul">
-                    <li class="li_top"><a href="login_Form.html" class='a11'>Login</a> |</li>
-                    <li class="li_top"><a href="Registration_Form.html" class='a11'>Register</a> |</li>
-                    <li class="li_top"><a href="contactus.html" class='a11'>Contact</a> |</li>
-                    <li class="li_top"><a href="aboutus.html" class='a11'>About Us!</a> </li>
+                    <li class="li_top"><a href="Arpan/Project/login_Form.html" class='a11'>Login</a> |</li>
+                    <li class="li_top"><a href="Arpan/Project/Registration_Form.html" class='a11'>Register</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Contact</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>About Us!</a> </li>
                  </ul>
             </div>
      </section>
      <section class="s_bar">
           <div class="top_mid_side_left">
                  <ul class="top_ul_1">
-                    <li class="li_top"><a href="home.html" class='a11'><b>VIT-MART</b></a> |</li>
-                    <li class="li_top"><a href="home.html" class='a11'>Home</a> |</li>
-                    <li class="li_top"><a href="Login_Form.html" class='a11'>Sign In</a> |</li>
-                    <li class="li_top"><a href="Registration_form.html" class='a11'>Sign Up</a> |</li>
-                    <li class="li_top"><a href="Aboutus.html" class='a11'>About Us!</a> </li>
+                    <li class="li_top"><a href="#" class='a11'><b>VIT-MART</b></a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Home</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Sign In</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>Sign Up</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>About Us!</a> </li>
                  </ul>
             </div>
             <div class="top_mid_side_right">
@@ -261,66 +253,40 @@
            <tr>
               <td>
                   <div class="description">
-                  <img src="images/1.png">
-                                   </div>
+                  <?php
+                  include("connect.php");
+                  global $conn;
+                  $cnn = 0;
+                  $sql = "select * from product";
+                  $run = mysqli_query($conn, $sql);
+                  while($row = mysqli_fetch_assoc($run))
+                  { 
+                    echo "<img src='upload/".$row["img_1"]."' width='200px' height='200px'>";
+                    echo "<div class='b1'><button>View</button></div>";
+                    echo "<div class='b2'><button>Add to cart</button></div>";
+                    if($cnn == 2)
+                    {
+                    echo "<br>";
+                    $cnn = 0;
+                    }
+                     
+                    $cnn++;
+                  }
+                  ?>
+                   
+                  
+      
+                  </div>
                   
               </td>
-              <td>
-                  <div class="description">
-                  <img src="images/2.png">
-                  </div>
-              </td>
-              <td>
-                  <div class="description">
-                  <img src="images/3.png">
-                  </div>
-              </td>
-          </tr>
-          <tr>
-           <td>
-           <div class="description">
-                <img src="images/4.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/5.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/9.png">
-                
-          </div>
-          </td>
-          </tr>
-          <tr>
-           <td>
-           <div class="description">
-                <img src="images/10.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/13.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/12.png">
-          </div>
-          </td>
           </tr>
           </table>
      </section>
      <section class="footer">
-          <ul>
-            <li><center>VIT MART Private Limited</center></li>
-            <li></li>
-          </ul>
+          
      </section>
      <section class="bottom">
-     	    <center><p id = "bot"><b>Joined work by Abhinaw, Arpan and jaitha</b></p></center>
+     	
      </section>
   </body>
 </html>

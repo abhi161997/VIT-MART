@@ -1,10 +1,35 @@
-<!doctype HTML>
+<?php
+$email = $_POST["Email_Id"];
+$pass = $_POST["pwd1"];
+session_start();
+if(isset($email) and isset($pass))
+{
+	require("connect.php");
+	global $conn;
+
+	$sql = "select * from customer where c_email='$email' and c_pass = '$pass'";
+	$run = mysqli_query($conn, $sql);
+	
+	if(mysqli_num_rows($run) == 1)
+	{
+          $row = mysqli_fetch_assoc($run);
+          $_SESSION["cname"] = $row["c_fn"]." ".$row["c_ln"];
+	}
+	else
+	{
+		header("location:home.html");
+	}
+	?>
+<!DOCTYPE html>
 <html>
-  <head>
-     <title>
-     	VIT-MART
-     </title>
-     <style type="text/css">
+<head>
+	<title>Login page</title>
+	<style type="text/css">
+		.ptable{
+			width:800px;
+			text-align: center;
+		    margin: auto;
+		}
      *{
        margin:0px;
        padding:0px;
@@ -129,7 +154,8 @@
           text-align: center;
           padding-top: 15px;
           margin-top:20px; 
-          border: 2px solid #434343 ;
+
+
       }
        .desc{
        	margin-top: 40px;
@@ -137,11 +163,10 @@
        	width: 100%;
        }
        .footer{
-       	 margin-top:630px;
+       	 margin-top:30px;
        	 width:100%;
        	 background-color:#434343;
          height:200px;
-
        }
        .bottom{
        	width:100%;
@@ -169,13 +194,8 @@
        	float:right;
         width:49%;
        }
-       .bottom{
-
-        color:white;
-        text-align:center;
-       }
-       .bot{
-        padding: auto;
+       .ptable{
+       	margin-top: 20px;
        }
      </style>
   </head>
@@ -186,10 +206,10 @@
             </div>
             <div class="top_side_right">
                  <ul class="top_ul">
-                    <li class="li_top"><a href="login_Form.html" class='a11'>Login</a> |</li>
-                    <li class="li_top"><a href="Registration_Form.html" class='a11'>Register</a> |</li>
-                    <li class="li_top"><a href="contactus.html" class='a11'>Contact</a> |</li>
-                    <li class="li_top"><a href="aboutus.html" class='a11'>About Us!</a> </li>
+                    <li class="li_top"><a href="logout.php" class='a11'>Logout</a> |</li>
+                    
+                    <li class="li_top"><a href="#" class='a11'>Contact</a> |</li>
+                    <li class="li_top"><a href="#" class='a11'>About Us!</a> </li>
                  </ul>
             </div>
      </section>
@@ -198,9 +218,11 @@
                  <ul class="top_ul_1">
                     <li class="li_top"><a href="home.html" class='a11'><b>VIT-MART</b></a> |</li>
                     <li class="li_top"><a href="home.html" class='a11'>Home</a> |</li>
-                    <li class="li_top"><a href="Login_Form.html" class='a11'>Sign In</a> |</li>
-                    <li class="li_top"><a href="Registration_form.html" class='a11'>Sign Up</a> |</li>
-                    <li class="li_top"><a href="Aboutus.html" class='a11'>About Us!</a> </li>
+                    <li class="li_top"><a href="logout.php" class='a11'>Logout</a> |</li>
+                    <li class="li_top"><a href="categories.html" class='a11'>Categories</a> |</li>
+                    <li class="li_top"><a href="brands.html" class='a11'>Brands</a> |</li>
+                    <li class="li_top"><a href="aboutus.html" class='a11'>About Us!</a> </li>
+                    <li class="li_top"><a href="edit_cust.html" class='a11'>Edit your details</a> </li>
                  </ul>
             </div>
             <div class="top_mid_side_right">
@@ -215,112 +237,66 @@
                  </ul>
             </div>
      </section>
-     <section class="main_bar">
-          <div class="slide_bar">
-              <div class="palaroid">
-                 <img src="images/b1.jpg" id="img1"></img>
-              </div>
-          </div>
-          <table class="desc">
-           <tr>
-           <td>
-           <div class="description">
-                <h3>We Love Our Customer
-                </h3>
-                <p>
-                    <br>24*7 Service
-                </p>
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <h3>Best Prices
-                </h3>
-                <p> <br>Affordable Price</p>
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <h3>100% Satisfaction
-                </h3>
-                <p><br>
-                	best used
-                </p>
 
-          </div>
-          </td>
-          </tr>
-          </table>
-     </section>
-     </section>
-     <section class="mid_page">
-           <div class="mid_page_content">
-           	<p id="m_p_c"><b>Hot This Week</b></p>
-           </div>
-           <table class="desc">
-           <tr>
-              <td>
-                  <div class="description">
-                  <img src="images/1.png">
-                                   </div>
-                  
-              </td>
-              <td>
-                  <div class="description">
-                  <img src="images/2.png">
-                  </div>
-              </td>
-              <td>
-                  <div class="description">
-                  <img src="images/3.png">
-                  </div>
-              </td>
-          </tr>
-          <tr>
-           <td>
-           <div class="description">
-                <img src="images/4.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/5.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/9.png">
-                
-          </div>
-          </td>
-          </tr>
-          <tr>
-           <td>
-           <div class="description">
-                <img src="images/10.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/13.png">
-          </div>
-          </td>
-          <td>
-           <div class="description">
-                <img src="images/12.png">
-          </div>
-          </td>
-          </tr>
-          </table>
-     </section>
-     <section class="footer">
+<?php
+
+echo "welcome ".$_SESSION["cname"];
+?>
+
+
+<?php
+	$sql1 = "select * from product order by rand() limit 5";
+	$result = mysqli_query($conn, $sql1);
+	if(mysqli_num_rows($result))
+	{
+		?>
+		<table border="1px black" width="auto" class = "ptable">
+			<tr>
+				<th>Image</th>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Brand</th>
+				<th>Price(Rs.)</th>
+				<th>Manufacturer</th>
+				<th>Reviews</th>
+				<th>Buy</th>
+				<th>view</th>
+			<tr>	
+		<?php
+		while($row1 = mysqli_fetch_array($result))
+		{
+			?><form method="post" action = "purchase.php">
+               <tr>
+               	<td><?php echo "<img src='upload/".$row1["img_1"]."' width='180px' height='180px'>"?></td>
+                 <td><?php echo $row1["p_title"] ?></td>
+                 <td><?php echo $row1["p_category"] ?></td>
+                 <td><?php echo $row1["p_brand"] ?></td>
+                 <td><?php echo $row1["p_sel_price"] ?></td>
+                 <td><?php echo $row1["m_name"] ?></td>
+                 <td><?php echo $row1["description"] ?></td>
+                 <input type = "text" value=<?php echo $row1['p_id'] ?> name = "pur"class = "ind" hidden>
+                 <td><input type = "submit" value= "buy"></td>
+                 <td><button>View</button></td>
+                 
+                 
+               </tr>
+              </form>
+			<?php
+		}
+	}
+}
+?>
+</table>
+<section class="footer">
           <ul>
             <li><center>VIT MART Private Limited</center></li>
             <li></li>
           </ul>
      </section>
      <section class="bottom">
-     	    <center><p id = "bot"><b>Joined work by Abhinaw, Arpan and jaitha</b></p></center>
+          <center><p id = "bot"><b>Made By Abhinaw Gupta(15BCE0677)</b></p></center>
      </section>
-  </body>
+
+</body>
 </html>
+
